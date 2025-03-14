@@ -3,54 +3,156 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-black/90 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">CleanPro</h3>
-            <p className="text-gray-400">
-              Servicios profesionales de limpieza para hogares y negocios en Montreal y alrededores.
-            </p>
+          {/* Logo ovalado más grande con borde dorado */}
+          <div className="flex items-center">
+            <div className="rounded-full overflow-hidden border-2 border-[#C8A35B] w-44 h-28">
+              <img
+                src="/entretien.png"
+                alt="Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Servicios</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">
+              Servicios
+            </h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Limpieza Residencial</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Limpieza Comercial</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Limpieza de Primavera</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Post-Construcción</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-[#C8A35B] transition-colors"
+                >
+                  Limpieza Residencial
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-[#C8A35B] transition-colors"
+                >
+                  Limpieza Comercial
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-[#C8A35B] transition-colors"
+                >
+                  Limpieza de Primavera
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-[#C8A35B] transition-colors"
+                >
+                  Post-Construcción
+                </a>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">
+              Enlaces Rápidos
+            </h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Sobre Nosotros</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Testimonios</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-[#C8A35B] transition-colors"
+                >
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-[#C8A35B] transition-colors"
+                >
+                  Sobre Nosotros
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-[#C8A35B] transition-colors"
+                >
+                  Testimonios
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-[#C8A35B] transition-colors"
+                >
+                  Contacto
+                </a>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">
+              Síguenos
+            </h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="w-6 h-6" />
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/profile.php?id=61573824164412"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center w-14 h-14 border-2 border-[#C8A35B] rounded-full overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-black z-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                <Facebook
+                  strokeWidth={1.5}
+                  stroke="#C8A35B"
+                  fill="none"
+                  className="relative z-10 w-8 h-8 transition-colors duration-300"
+                />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="w-6 h-6" />
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/entretien.menager0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center w-14 h-14 border-2 border-[#C8A35B] rounded-full overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-black z-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                <Instagram
+                  strokeWidth={1.5}
+                  stroke="#C8A35B"
+                  fill="none"
+                  className="relative z-10 w-8 h-8 transition-colors duration-300"
+                />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-6 h-6" />
+
+              {/* Twitter (seguir usando # o colocar otro link si lo deseas) */}
+              <a
+                href="#"
+                className="group relative inline-flex items-center justify-center w-14 h-14 border-2 border-[#C8A35B] rounded-full overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-black z-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                <Twitter
+                  strokeWidth={1.5}
+                  stroke="#C8A35B"
+                  fill="none"
+                  className="relative z-10 w-8 h-8 transition-colors duration-300"
+                />
               </a>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 CleanPro. Todos los derechos reservados.</p>
+        <div className="border-t border-gray-700 mt-12 pt-8 text-center">
+          <p className="text-gray-400">&copy; 2025. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

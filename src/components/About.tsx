@@ -1,10 +1,11 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Target, Lightbulb, Trophy, Users, CheckCircle2, Leaf, Shield, Clock, PenTool as Tool, Heart } from 'lucide-react';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import { useI18n } from '../i18n/i18nContext';
 
 const About = () => {
+  const { t } = useI18n();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -46,55 +47,58 @@ const About = () => {
         >
           {/* Misión, Visión, Valores */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Misión */}
             <motion.div
               variants={fadeInUp}
-              className="group bg-white/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-blue-50"
+              className="group bg-black/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-[#C8A35B]"
             >
-              <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-8 h-8 text-blue-600" />
+              <div className="bg-gradient-to-br from-[#C8A35B]/20 to-[#C8A35B]/10 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Target className="w-8 h-8 text-[#C8A35B]" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                Misión
+              <h3 className="text-2xl font-bold text-white mb-4">
+                {t('about.mission.title')}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Proporcionar servicios de limpieza excepcionales que transformen espacios y mejoren la calidad de vida de nuestros clientes, utilizando productos ecológicos y tecnologías innovadoras.
+              <p className="text-gray-300 leading-relaxed">
+                {t('about.mission.description')}
               </p>
             </motion.div>
 
+            {/* Visión */}
             <motion.div
               variants={fadeInUp}
-              className="group bg-white/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-blue-50"
+              className="group bg-black/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-[#C8A35B]"
             >
-              <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Lightbulb className="w-8 h-8 text-blue-600" />
+              <div className="bg-gradient-to-br from-[#C8A35B]/20 to-[#C8A35B]/10 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Lightbulb className="w-8 h-8 text-[#C8A35B]" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                Visión
+              <h3 className="text-2xl font-bold text-white mb-4">
+                {t('about.vision.title')}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Ser reconocidos como líderes en la industria de limpieza profesional, destacando por nuestra excelencia, innovación y compromiso con la satisfacción del cliente.
+              <p className="text-gray-300 leading-relaxed">
+                {t('about.vision.description')}
               </p>
             </motion.div>
 
+            {/* Valores */}
             <motion.div
               variants={fadeInUp}
-              className="group bg-white/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-blue-50"
+              className="group bg-black/90 backdrop-blur-lg rounded-2xl p-8 shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-[#C8A35B]"
             >
-              <div className="bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Trophy className="w-8 h-8 text-blue-600" />
+              <div className="bg-gradient-to-br from-[#C8A35B]/20 to-[#C8A35B]/10 rounded-2xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Trophy className="w-8 h-8 text-[#C8A35B]" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                Valores
+              <h3 className="text-2xl font-bold text-white mb-4">
+                {t('about.values.title')}
               </h3>
-              <ul className="text-gray-600 space-y-3">
+              <ul className="text-gray-300 space-y-3">
                 {[
-                  'Excelencia en el servicio',
-                  'Compromiso ambiental',
-                  'Integridad profesional',
-                  'Innovación constante'
+                  t('about.values.excellence'),
+                  t('about.values.environment'),
+                  t('about.values.integrity'),
+                  t('about.values.innovation')
                 ].map((value, index) => (
                   <li key={index} className="flex items-center space-x-2">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-[#C8A35B] flex-shrink-0" />
                     <span className="leading-relaxed">{value}</span>
                   </li>
                 ))}
@@ -103,60 +107,57 @@ const About = () => {
           </div>
 
           {/* Por qué elegirnos */}
-          <motion.div
-            variants={fadeInUp}
-            className="mt-20"
-          >
+          <motion.div variants={fadeInUp} className="mt-20">
             <h2 className="text-4xl font-bold text-center mb-12">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 animate-gradient">
-                ¿Por qué elegirnos?
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C8A35B] to-[#C8A35B]/80">
+                {t('about.whyChooseUs.title')}
               </span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   icon: <Users className="w-6 h-6" />,
-                  title: "Experiencia Comprobada",
-                  description: "Más de una década transformando espacios en toda la región."
+                  title: t('about.whyChooseUs.experience.title'),
+                  description: t('about.whyChooseUs.experience.description')
                 },
                 {
                   icon: <Shield className="w-6 h-6" />,
-                  title: "Personal Certificado",
-                  description: "Equipo profesional con formación continua y certificaciones."
+                  title: t('about.whyChooseUs.certifiedStaff.title'),
+                  description: t('about.whyChooseUs.certifiedStaff.description')
                 },
                 {
                   icon: <Leaf className="w-6 h-6" />,
-                  title: "Productos Ecológicos",
-                  description: "Comprometidos con el medio ambiente y su salud."
+                  title: t('about.whyChooseUs.ecoProducts.title'),
+                  description: t('about.whyChooseUs.ecoProducts.description')
                 },
                 {
                   icon: <Tool className="w-6 h-6" />,
-                  title: "Tecnología Avanzada",
-                  description: "Equipos y métodos de última generación."
+                  title: t('about.whyChooseUs.advancedTech.title'),
+                  description: t('about.whyChooseUs.advancedTech.description')
                 },
                 {
                   icon: <Heart className="w-6 h-6" />,
-                  title: "Servicio Personalizado",
-                  description: "Soluciones adaptadas a sus necesidades específicas."
+                  title: t('about.whyChooseUs.customService.title'),
+                  description: t('about.whyChooseUs.customService.description')
                 },
                 {
                   icon: <Clock className="w-6 h-6" />,
-                  title: "Atención 24/7",
-                  description: "Siempre disponibles cuando nos necesite."
+                  title: t('about.whyChooseUs.attention247.title'),
+                  description: t('about.whyChooseUs.attention247.description')
                 }
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className="group bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100/50 hover:bg-gradient-to-br hover:from-white hover:to-blue-50"
+                  className="group bg-black/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#C8A35B]/50 hover:bg-gradient-to-br hover:from-black hover:to-[#C8A35B]/10"
                 >
                   <div className="flex items-center space-x-4 mb-4">
-                    <div className="bg-blue-100 p-3 rounded-xl text-blue-600 group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-[#C8A35B]/20 p-3 rounded-xl text-[#C8A35B] group-hover:scale-110 transition-transform duration-300">
                       {item.icon}
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
+                    <h3 className="text-xl font-semibold text-white">{item.title}</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                  <p className="text-gray-300 leading-relaxed">{item.description}</p>
                 </motion.div>
               ))}
             </div>

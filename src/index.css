@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fondo global de la página en #e0dfdc */
+html,
+body {
+  @apply bg-[#e0dfdc];
+}

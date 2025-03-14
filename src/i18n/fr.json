@@ -1,0 +1,204 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "services": "Services",
+    "testimonials": "Témoignages",
+    "contact": "Contact",
+    "callNow": "Appeler maintenant",
+    "language": "Langue"
+  },
+  "hero": {
+    "title": "Services de Nettoyage Professionnels",
+    "subtitle": "Solutions de nettoyage personnalisées pour maisons et entreprises"
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "description": "Nous sommes une entreprise dédiée à fournir des services de nettoyage de haute qualité avec du personnel formé et des produits écologiques.",
+    "mission": {
+      "title": "Mission",
+      "description": "Fournir des services de nettoyage exceptionnels qui transforment les espaces et améliorent la qualité de vie de nos clients, en utilisant des produits écologiques et des technologies innovantes."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "Être reconnus comme leaders dans l'industrie du nettoyage professionnel, en se distinguant par notre excellence, notre innovation et notre engagement envers la satisfaction du client."
+    },
+    "values": {
+      "title": "Valeurs",
+      "excellence": "Excellence du service",
+      "environment": "Engagement environnemental",
+      "integrity": "Intégrité professionnelle",
+      "innovation": "Innovation constante"
+    },
+    "whyChooseUs": {
+      "title": "Pourquoi Nous Choisir?",
+      "experience": {
+        "title": "Expérience Prouvée",
+        "description": "Plus d'une décennie à transformer des espaces dans toute la région."
+      },
+      "certifiedStaff": {
+        "title": "Personnel Certifié",
+        "description": "Équipe professionnelle avec formation continue et certifications."
+      },
+      "ecoProducts": {
+        "title": "Produits Écologiques",
+        "description": "Engagés envers l'environnement et votre santé."
+      },
+      "advancedTech": {
+        "title": "Technologie Avancée",
+        "description": "Équipements et méthodes de pointe."
+      },
+      "customService": {
+        "title": "Service Personnalisé",
+        "description": "Solutions adaptées à vos besoins spécifiques."
+      },
+      "attention247": {
+        "title": "Attention 24/7",
+        "description": "Toujours disponibles quand vous avez besoin de nous."
+      }
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Solutions de nettoyage professionnelles conçues pour dépasser vos attentes",
+    "residential": {
+      "title": "Nettoyage Résidentiel",
+      "description": "Service de nettoyage professionnel pour les maisons, adapté à vos besoins spécifiques.",
+      "features": [
+        "Nettoyage en profondeur",
+        "Désinfection complète",
+        "Produits écologiques",
+        "Personnel formé"
+      ]
+    },
+    "commercial": {
+      "title": "Nettoyage Commercial",
+      "description": "Entretien complet pour bureaux et espaces commerciaux.",
+      "features": [
+        "Service 24/7",
+        "Équipements spécialisés",
+        "Plans personnalisés",
+        "Certifications"
+      ]
+    },
+    "spring": {
+      "title": "Nettoyage de Printemps",
+      "description": "Nettoyage en profondeur et rénovation complète des espaces.",
+      "features": [
+        "Nettoyage intensif",
+        "Organisation",
+        "Rénovation",
+        "Désinfection"
+      ]
+    },
+    "postConstruction": {
+      "title": "Post-Construction",
+      "description": "Nettoyage spécialisé après construction et rénovations.",
+      "features": [
+        "Enlèvement de débris",
+        "Nettoyage en profondeur",
+        "Finitions finales",
+        "Certification"
+      ]
+    },
+    "guarantees": {
+      "qualityGuarantee": "Garantie de Qualité",
+      "qualityDescription": "Satisfaction garantie dans chaque service",
+      "availability": "Disponibilité 24/7",
+      "availabilityDescription": "Services d'urgence disponibles",
+      "equipment": "Équipements Professionnels",
+      "equipmentDescription": "Technologie de pointe",
+      "requestService": "Demander un Service"
+    }
+  },
+  "workplan": {
+    "title": "Plan de Travail",
+    "subtitle": "Notre processus détaillé pour un nettoyage impeccable",
+    "steps": [
+      "Nettoyage des fenêtres",
+      "Nettoyage des cadres et moulures",
+      "Nettoyage et désinfection des salles de bains",
+      "Nettoyage intérieur/extérieur des armoires",
+      "Nettoyage complet de la cuisine",
+      "Nettoyage des appareils électroménagers",
+      "Nettoyage des murs et plafonds",
+      "Nettoyage des tapis",
+      "Nettoyage des stores",
+      "Nettoyage des portes",
+      "Nettoyage des meubles rembourrés",
+      "Dépoussiérage complet",
+      "Aspiration des sols",
+      "Nettoyage des escaliers"
+    ]
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Clients",
+    "subtitle": "Expériences réelles de clients satisfaits",
+    "clients": [
+      {
+        "name": "Maria Gonzalez",
+        "position": "Propriétaire de Maison",
+        "testimonial": "Le service était exceptionnel. Ma maison n'a jamais été aussi propre et bien rangée. Fortement recommandé!"
+      },
+      {
+        "name": "Carlos Rodriguez",
+        "position": "Gestionnaire de Bureau",
+        "testimonial": "Professionnels, ponctuels et efficaces. Ils ont complètement transformé notre espace de travail."
+      },
+      {
+        "name": "Ana Martinez",
+        "position": "Designer d'Intérieur",
+        "testimonial": "Leur attention aux détails est impressionnante. Je fais entièrement confiance à leur service pour mes projets."
+      },
+      {
+        "name": "Roberto Sanchez",
+        "position": "Propriétaire de Restaurant",
+        "testimonial": "Ils maintiennent notre restaurant impeccable. Leur service est essentiel pour notre entreprise."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "subtitle": "Demandez votre devis personnalisé aujourd'hui",
+    "name": "Nom Complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "service": "Service d'Intérêt",
+    "selectService": "Sélectionnez un service",
+    "message": "Message",
+    "send": "Envoyer la Demande",
+    "contactInfo": {
+      "title": "Informations de Contact",
+      "phone": "Téléphone",
+      "phoneNumber": "+1 (555) 123-4567",
+      "email": "Email",
+      "emailAddress": "info@cleanpro.com",
+      "location": "Emplacement",
+      "locationDetails": "Montréal, Laval, Rive-Sud et Rive-Nord",
+      "hours": "Heures d'Ouverture",
+      "hoursDetails": [
+        "Lundi - Vendredi: 8h00 - 18h00",
+        "Samedi: 9h00 - 16h00",
+        "Dimanche: Fermé"
+      ]
+    }
+  },
+  "footer": {
+    "description": "Services de nettoyage professionnels pour maisons et entreprises à Montréal et ses environs.",
+    "services": {
+      "title": "Services",
+      "residential": "Nettoyage Résidentiel",
+      "commercial": "Nettoyage Commercial",
+      "spring": "Nettoyage de Printemps",
+      "postConstruction": "Post-Construction"
+    },
+    "quickLinks": {
+      "title": "Liens Rapides",
+      "home": "Accueil",
+      "about": "À Propos",
+      "testimonials": "Témoignages",
+      "contact": "Contact"
+    },
+    "followUs": "Suivez-Nous",
+    "rights": "Tous droits réservés"
+  }
+}

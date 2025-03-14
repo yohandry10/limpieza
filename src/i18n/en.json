@@ -1,0 +1,204 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "callNow": "Call Now",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Professional Cleaning Services",
+    "subtitle": "Customized cleaning solutions for homes and businesses"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are a company dedicated to providing high-quality cleaning services with trained personnel and eco-friendly products.",
+    "mission": {
+      "title": "Mission",
+      "description": "To provide exceptional cleaning services that transform spaces and improve the quality of life of our clients, using eco-friendly products and innovative technologies."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To be recognized as leaders in the professional cleaning industry, standing out for our excellence, innovation, and commitment to customer satisfaction."
+    },
+    "values": {
+      "title": "Values",
+      "excellence": "Service excellence",
+      "environment": "Environmental commitment",
+      "integrity": "Professional integrity",
+      "innovation": "Constant innovation"
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us?",
+      "experience": {
+        "title": "Proven Experience",
+        "description": "Over a decade transforming spaces throughout the region."
+      },
+      "certifiedStaff": {
+        "title": "Certified Staff",
+        "description": "Professional team with continuous training and certifications."
+      },
+      "ecoProducts": {
+        "title": "Eco-Friendly Products",
+        "description": "Committed to the environment and your health."
+      },
+      "advancedTech": {
+        "title": "Advanced Technology",
+        "description": "State-of-the-art equipment and methods."
+      },
+      "customService": {
+        "title": "Personalized Service",
+        "description": "Solutions tailored to your specific needs."
+      },
+      "attention247": {
+        "title": "24/7 Attention",
+        "description": "Always available when you need us."
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional cleaning solutions designed to exceed your expectations",
+    "residential": {
+      "title": "Residential Cleaning",
+      "description": "Professional cleaning service for homes, adapted to your specific needs.",
+      "features": [
+        "Deep cleaning",
+        "Complete disinfection",
+        "Eco-friendly products",
+        "Trained personnel"
+      ]
+    },
+    "commercial": {
+      "title": "Commercial Cleaning",
+      "description": "Comprehensive maintenance for offices and commercial spaces.",
+      "features": [
+        "24/7 Service",
+        "Specialized equipment",
+        "Customized plans",
+        "Certifications"
+      ]
+    },
+    "spring": {
+      "title": "Spring Cleaning",
+      "description": "Deep cleaning and complete renovation of spaces.",
+      "features": [
+        "Intensive cleaning",
+        "Organization",
+        "Renovation",
+        "Disinfection"
+      ]
+    },
+    "postConstruction": {
+      "title": "Post-Construction",
+      "description": "Specialized cleaning after construction and renovations.",
+      "features": [
+        "Debris removal",
+        "Deep cleaning",
+        "Final finishes",
+        "Certification"
+      ]
+    },
+    "guarantees": {
+      "qualityGuarantee": "Quality Guarantee",
+      "qualityDescription": "Satisfaction guaranteed in every service",
+      "availability": "24/7 Availability",
+      "availabilityDescription": "Emergency services available",
+      "equipment": "Professional Equipment",
+      "equipmentDescription": "State-of-the-art technology",
+      "requestService": "Request Service"
+    }
+  },
+  "workplan": {
+    "title": "Work Plan",
+    "subtitle": "Our detailed process for impeccable cleaning",
+    "steps": [
+      "Window cleaning",
+      "Cleaning of frames and moldings",
+      "Bathroom cleaning and disinfection",
+      "Interior/exterior cabinet cleaning",
+      "Complete kitchen cleaning",
+      "Appliance cleaning",
+      "Wall and ceiling cleaning",
+      "Carpet cleaning",
+      "Blind cleaning",
+      "Door cleaning",
+      "Upholstered furniture cleaning",
+      "Complete dusting",
+      "Floor vacuuming",
+      "Stair cleaning"
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Real experiences from satisfied clients",
+    "clients": [
+      {
+        "name": "Maria Gonzalez",
+        "position": "Homeowner",
+        "testimonial": "The service was exceptional. My house has never been so clean and tidy. Highly recommended!"
+      },
+      {
+        "name": "Carlos Rodriguez",
+        "position": "Office Manager",
+        "testimonial": "Professional, punctual, and efficient. They have completely transformed our workspace."
+      },
+      {
+        "name": "Ana Martinez",
+        "position": "Interior Designer",
+        "testimonial": "Their attention to detail is impressive. I fully trust their service for my projects."
+      },
+      {
+        "name": "Roberto Sanchez",
+        "position": "Restaurant Owner",
+        "testimonial": "They keep our restaurant impeccable. Their service is essential for our business."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Request your personalized quote today",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "service": "Service of Interest",
+    "selectService": "Select a service",
+    "message": "Message",
+    "send": "Send Request",
+    "contactInfo": {
+      "title": "Contact Information",
+      "phone": "Phone",
+      "phoneNumber": "+1 (555) 123-4567",
+      "email": "Email",
+      "emailAddress": "info@cleanpro.com",
+      "location": "Location",
+      "locationDetails": "Montreal, Laval, South Shore and North Shore",
+      "hours": "Business Hours",
+      "hoursDetails": [
+        "Monday - Friday: 8:00 AM - 6:00 PM",
+        "Saturday: 9:00 AM - 4:00 PM",
+        "Sunday: Closed"
+      ]
+    }
+  },
+  "footer": {
+    "description": "Professional cleaning services for homes and businesses in Montreal and surrounding areas.",
+    "services": {
+      "title": "Services",
+      "residential": "Residential Cleaning",
+      "commercial": "Commercial Cleaning",
+      "spring": "Spring Cleaning",
+      "postConstruction": "Post-Construction"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "about": "About Us",
+      "testimonials": "Testimonials",
+      "contact": "Contact"
+    },
+    "followUs": "Follow Us",
+    "rights": "All rights reserved"
+  }
+}
