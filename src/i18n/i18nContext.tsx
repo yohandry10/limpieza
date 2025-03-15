@@ -1,58 +1,55 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
-import esTranslations from './es.json';
 import enTranslations from './en.json';
 import frTranslations from './fr.json';
 
-type Language = 'es' | 'en' | 'fr';
+type Langue = 'fr' | 'en';
 
 interface I18nContextType {
-  language: Language;
-  t: (key: string) => string;
-  changeLanguage: (lang: Language) => void;
-  getNextLanguage: () => Language;
+  langue: Langue;
+  t: (clé: string) => string;
+  changerLangue: (lang: Langue) => void;
+  getNextLangue: () => Langue;
 }
 
-const translations = {
-  es: esTranslations,
+const traductions = {
   en: enTranslations,
-  fr: frTranslations
+  fr: frTranslations,
 };
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // 1) Inicia en francés
-  const [language, setLanguage] = useState<Language>('fr');
+  // 1) Démarrer en français
+  const [langue, setLangue] = useState<Langue>('fr');
 
-  const t = (key: string): string => {
-    const keys = key.split('.');
-    let value: any = translations[language];
-
+  const t = (clé: string): string => {
+    const keys = clé.split('.');
+    let valeur: any = traductions[langue];
     for (const k of keys) {
-      if (value && value[k]) {
-        value = value[k];
+      if (valeur && valeur[k]) {
+        valeur = valeur[k];
       } else {
-        // Fallback a la key si no existe la traducción
-        return key;
+        // Retourner la clé si la traduction n'existe pas
+        return clé;
       }
     }
-    return value;
+    return valeur;
   };
 
-  const changeLanguage = (lang: Language) => {
-    setLanguage(lang);
+  const changerLangue = (lang: Langue) => {
+    setLangue(lang);
   };
 
-  // 2) Orden de idiomas: fr -> en -> es
-  const getNextLanguage = (): Language => {
-    const languageOrder: Language[] = ['fr', 'en', 'es'];
-    const currentIndex = languageOrder.indexOf(language);
-    const nextIndex = (currentIndex + 1) % languageOrder.length;
-    return languageOrder[nextIndex];
+  // 2) Ordre des langues : fr -> en
+  const getNextLangue = (): Langue => {
+    const ordreLangues: Langue[] = ['fr', 'en'];
+    const currentIndex = ordreLangues.indexOf(langue);
+    const nextIndex = (currentIndex + 1) % ordreLangues.length;
+    return ordreLangues[nextIndex];
   };
 
   return (
-    <I18nContext.Provider value={{ language, t, changeLanguage, getNextLanguage }}>
+    <I18nContext.Provider value={{ langue, t, changerLangue, getNextLangue }}>
       {children}
     </I18nContext.Provider>
   );
@@ -61,7 +58,7 @@ export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 export const useI18n = (): I18nContextType => {
   const context = useContext(I18nContext);
   if (!context) {
-    throw new Error('useI18n must be used within an I18nProvider');
+    throw new Error('useI18n doit être utilisé dans un I18nProvider');
   }
   return context;
 };

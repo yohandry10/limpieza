@@ -6,9 +6,9 @@ import { useI18n } from '../i18n/i18nContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
-  const { t, language, changeLanguage, getNextLanguage } = useI18n();
+  const { t, langue, changerLangue, getNextLangue } = useI18n();
 
-  // Oculta el navbar al hacer scroll hacia abajo y lo muestra al subir
+  // Cacher la barre de navigation lors du défilement vers le bas et l'afficher lors du défilement vers le haut
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
     const handleScroll = () => {
@@ -25,32 +25,28 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: t('navbar.home'), href: '#home' },
-    { name: t('navbar.services'), href: '#services' },
-    { name: t('navbar.testimonials'), href: '#testimonials' },
-    { name: t('navbar.contact'), href: '#contact' },
+    { nom: t('navbar.home'), href: '#home' },
+    { nom: t('navbar.services'), href: '#services' },
+    { nom: t('navbar.testimonials'), href: '#testimonials' },
+    { nom: t('navbar.contact'), href: '#contact' },
   ];
 
   const getNextLanguageFlag = () => {
-    switch (language) {
+    switch (langue) {
       case 'fr':
-        return '/reino-unido.png';
+        return '/reino-unido.png'; // drapeau anglais
       case 'en':
-        return '/mundo.png';
-      case 'es':
-        return '/francia.png';
+        return '/francia.png'; // drapeau français
       default:
         return '/reino-unido.png';
     }
   };
 
   const getLanguageButtonText = () => {
-    switch (language) {
+    switch (langue) {
       case 'fr':
         return 'EN';
       case 'en':
-        return 'ES';
-      case 'es':
         return 'FR';
       default:
         return 'EN';
@@ -58,8 +54,8 @@ const Navbar = () => {
   };
 
   const handleLanguageChange = () => {
-    const nextLang = getNextLanguage();
-    changeLanguage(nextLang);
+    const nextLang = getNextLangue();
+    changerLangue(nextLang);
   };
 
   return (
@@ -74,43 +70,36 @@ const Navbar = () => {
         >
           <div className="max-w-7xl mx-auto px-0 sm:px-2 lg:px-4 relative">
             <div className="flex items-center justify-between h-20">
-              {/* Botón hamburguesa (solo en móvil) – se coloca en la parte derecha sin mover el logo */}
-              <div className="md:hidden absolute right-4 inset-y-0 flex items-center">
+              {/* Bouton hamburger pour mobile: se place désormais avec un espacement depuis la droite */}
+              <div className="md:hidden absolute right-8 inset-y-0 flex items-center">
                 <button onClick={() => setIsOpen(!isOpen)} className="text-white">
                   {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
               </div>
-
-              {/* Logo: se mantiene centrado en móvil y con margen negativo en escritorio */}
+              {/* Logo : centré en mobile et avec marge négative sur desktop */}
               <motion.div
                 initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
                 className="flex-shrink-0 mx-auto md:ml-[-90px] lg:ml-[-150px]"
                 style={{ width: 'auto', height: 'auto', overflow: 'visible' }}
               >
-                <img
-                  src="/entretien.png"
-                  alt="Logo"
-                  className="h-48 w-64 object-contain"
-                  style={{ maxWidth: 'none', margin: 0 }}
-                />
+                <img src="/entretien.png" alt="Logo" className="h-48 w-64 object-contain" style={{ maxWidth: 'none', margin: 0 }} />
               </motion.div>
-
-              {/* Menú desktop */}
+              {/* Menu desktop */}
               <div className="hidden md:flex absolute right-0 items-center space-x-8">
                 {navItems.map((item) => (
                   <motion.a
-                    key={item.name}
+                    key={item.nom}
                     href={item.href}
                     whileHover={{ scale: 1.05 }}
                     className="text-white hover:text-[#C8A35B] transition-colors duration-300"
                   >
-                    {item.name}
+                    {item.nom}
                   </motion.a>
                 ))}
                 <motion.button
                   whileHover={{ scale: 1.05 }}
-                  className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
+                  className="relative inline-flex items-center space-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
                 >
                   <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
                     <PhoneCall size={18} />
@@ -123,18 +112,13 @@ const Navbar = () => {
                   onClick={handleLanguageChange}
                   className="flex items-center gap-2 bg-gray-700 text-white px-3 py-2 rounded-full"
                 >
-                  <img
-                    src={getNextLanguageFlag()}
-                    alt="flag"
-                    className="w-5 h-5"
-                  />
+                  <img src={getNextLanguageFlag()} alt="flag" className="w-5 h-5" />
                   <span>{getLanguageButtonText()}</span>
                 </motion.button>
               </div>
             </div>
           </div>
-
-          {/* Menú móvil tipo “side-drawer” */}
+          {/* Menu mobile type “side-drawer” */}
           <AnimatePresence>
             {isOpen && (
               <>
@@ -146,7 +130,6 @@ const Navbar = () => {
                   className="fixed inset-0 bg-black/40 z-40"
                   onClick={() => setIsOpen(false)}
                 />
-
                 <motion.div
                   key="mobile-menu"
                   initial={{ x: '100%' }}
@@ -160,27 +143,26 @@ const Navbar = () => {
                       <X size={24} className="text-white" />
                     </button>
                   </div>
-
                   <div className="mt-8 space-y-4">
                     {navItems.map((item) => (
                       <a
-                        key={item.name}
+                        key={item.nom}
                         href={item.href}
                         className="block text-white hover:text-[#C8A35B] text-lg font-medium"
                         onClick={() => setIsOpen(false)}
                       >
-                        {item.name}
+                        {item.nom}
                       </a>
                     ))}
-
-                    <button className="relative w-full inline-flex items-center justify-center gap-2 border border-[#C8A35B] bg-black text-[#C8A35B] px-4 py-2 rounded-full overflow-hidden group transition-colors duration-300 mt-4">
+                    <button
+                      className="relative w-full inline-flex items-center justify-center gap-2 border border-[#C8A35B] bg-black text-[#C8A35B] px-4 py-2 rounded-full overflow-hidden group transition-colors duration-300 mt-4"
+                    >
                       <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
                         <PhoneCall size={18} />
                         <span className="ml-1">{t('navbar.callNow')}</span>
                       </span>
                       <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
                     </button>
-
                     <button
                       onClick={() => {
                         handleLanguageChange();
@@ -188,11 +170,7 @@ const Navbar = () => {
                       }}
                       className="w-full flex items-center justify-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-full mt-2"
                     >
-                      <img
-                        src={getNextLanguageFlag()}
-                        alt="flag-mobile"
-                        className="w-5 h-5"
-                      />
+                      <img src={getNextLanguageFlag()} alt="flag-mobile" className="w-5 h-5" />
                       <span>{getLanguageButtonText()}</span>
                     </button>
                   </div>
