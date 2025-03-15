@@ -72,23 +72,20 @@ const Navbar = () => {
           transition={{ duration: 0.3 }}
           className="fixed w-full z-50 bg-transparent transition-all duration-300"
         >
-          <div className="max-w-7xl mx-auto px-0 sm:px-2 lg:px-4">
+          <div className="max-w-7xl mx-auto px-0 sm:px-2 lg:px-4 relative">
             <div className="flex items-center justify-between h-20">
-              {/* Botón hamburguesa (móvil) en la parte izquierda */}
-              <div className="md:hidden order-1">
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="text-white"
-                >
+              {/* Botón hamburguesa (solo en móvil) – se coloca en la parte derecha sin mover el logo */}
+              <div className="md:hidden absolute right-4 inset-y-0 flex items-center">
+                <button onClick={() => setIsOpen(!isOpen)} className="text-white">
                   {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
               </div>
 
-              {/* Logo centrado */}
+              {/* Logo: se mantiene centrado en móvil y con margen negativo en escritorio */}
               <motion.div
                 initial={{ opacity: 0, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="flex-shrink-0 mx-auto order-2 md:ml-[-90px] lg:ml-[-150px]"
+                className="flex-shrink-0 mx-auto md:ml-[-90px] lg:ml-[-150px]"
                 style={{ width: 'auto', height: 'auto', overflow: 'visible' }}
               >
                 <img
@@ -100,41 +97,39 @@ const Navbar = () => {
               </motion.div>
 
               {/* Menú desktop */}
-              <div className="hidden md:block order-3">
-                <div className="ml-10 flex items-center space-x-8">
-                  {navItems.map((item) => (
-                    <motion.a
-                      key={item.name}
-                      href={item.href}
-                      whileHover={{ scale: 1.05 }}
-                      className="text-white hover:text-[#C8A35B] transition-colors duration-300"
-                    >
-                      {item.name}
-                    </motion.a>
-                  ))}
-                  <motion.button
+              <div className="hidden md:flex absolute right-0 items-center space-x-8">
+                {navItems.map((item) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
                     whileHover={{ scale: 1.05 }}
-                    className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
+                    className="text-white hover:text-[#C8A35B] transition-colors duration-300"
                   >
-                    <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
-                      <PhoneCall size={18} />
-                      <span className="ml-1">{t('navbar.callNow')}</span>
-                    </span>
-                    <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    onClick={handleLanguageChange}
-                    className="flex items-center gap-2 bg-gray-700 text-white px-3 py-2 rounded-full"
-                  >
-                    <img
-                      src={getNextLanguageFlag()}
-                      alt="flag"
-                      className="w-5 h-5"
-                    />
-                    <span>{getLanguageButtonText()}</span>
-                  </motion.button>
-                </div>
+                    {item.name}
+                  </motion.a>
+                ))}
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
+                >
+                  <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
+                    <PhoneCall size={18} />
+                    <span className="ml-1">{t('navbar.callNow')}</span>
+                  </span>
+                  <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  onClick={handleLanguageChange}
+                  className="flex items-center gap-2 bg-gray-700 text-white px-3 py-2 rounded-full"
+                >
+                  <img
+                    src={getNextLanguageFlag()}
+                    alt="flag"
+                    className="w-5 h-5"
+                  />
+                  <span>{getLanguageButtonText()}</span>
+                </motion.button>
               </div>
             </div>
           </div>
