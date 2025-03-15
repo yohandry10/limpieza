@@ -23,21 +23,19 @@ const Navbar = () => {
     { name: t('navbar.contact'), href: '#contact' },
   ];
 
-  // Selecciona la bandera según el próximo idioma
   const getNextLanguageFlag = () => {
     switch (language) {
       case 'fr':
-        return '/reino-unido.png'; // Próximo idioma: inglés
+        return '/reino-unido.png';
       case 'en':
-        return '/mundo.png';       // Próximo idioma: español
+        return '/mundo.png';
       case 'es':
-        return '/francia.png';     // Próximo idioma: francés
+        return '/francia.png';
       default:
-        return '/reino-unido.png'; // fallback
+        return '/reino-unido.png';
     }
   };
 
-  // Texto del botón para indicar el próximo idioma
   const getLanguageButtonText = () => {
     switch (language) {
       case 'fr':
@@ -62,19 +60,18 @@ const Navbar = () => {
         scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Barra principal */}
+      <div className="max-w-7xl mx-auto px-0 sm:px-2 lg:px-4">
         <div className="flex items-center justify-between h-20">
+          {/* Logo más grande y centrado en móviles */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex-shrink-0"
+            className="flex-shrink-0 md:-ml-12 mx-auto md:mx-0" // Centrado en móviles
           >
-            {/* Logo */}
             <img
               src="/entretien.png"
               alt="Logo"
-              className="h-16 w-24 rounded-full object-cover"
+              className="h-24 w-32 md:h-20 md:w-28 rounded-full object-cover" // Tamaño aumentado en móviles
             />
           </motion.div>
 
@@ -94,7 +91,6 @@ const Navbar = () => {
                 </motion.a>
               ))}
 
-              {/* Botón LLAMAR AHORA */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
@@ -106,7 +102,6 @@ const Navbar = () => {
                 <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
               </motion.button>
 
-              {/* Botón de idioma con bandera */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 onClick={handleLanguageChange}
@@ -138,7 +133,6 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Fondo semitransparente detrás del panel (opcional) */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -156,7 +150,6 @@ const Navbar = () => {
               transition={{ type: 'tween', duration: 0.3 }}
               className="fixed top-0 right-0 w-3/4 max-w-sm h-screen bg-white z-50 shadow-xl flex flex-col p-4"
             >
-              {/* Botón de cierre en la parte superior (opcional, ya que el backdrop cierra igual) */}
               <div className="flex justify-end">
                 <button onClick={() => setIsOpen(false)}>
                   <X size={24} />
@@ -175,7 +168,6 @@ const Navbar = () => {
                   </a>
                 ))}
 
-                {/* Botón LLAMAR AHORA (móvil) */}
                 <button className="relative w-full inline-flex items-center justify-center gap-2 border border-[#C8A35B] bg-black text-[#C8A35B] px-4 py-2 rounded-full overflow-hidden group transition-colors duration-300 mt-4">
                   <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
                     <PhoneCall size={18} />
@@ -184,7 +176,6 @@ const Navbar = () => {
                   <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
                 </button>
 
-                {/* Botón de idioma con bandera (móvil) */}
                 <button
                   onClick={() => {
                     handleLanguageChange();
@@ -209,4 +200,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
