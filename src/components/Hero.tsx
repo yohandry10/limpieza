@@ -16,7 +16,8 @@ const Hero = () => {
       <ParallaxBanner
         layers={[
           {
-            image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80',
+            image:
+              'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80',
             speed: -20,
             opacity: [1, 0.8],
             scale: [1.1, 1, 'easeOutCubic'],
@@ -28,7 +29,10 @@ const Hero = () => {
         {/* Fondo con degradado oscuro */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 z-10" />
 
-        <div className="absolute inset-0 flex items-center justify-center z-20">
+        {/* Contenedor del contenido del Hero:
+            En móviles se alinea al inicio y se le aplica un padding-top para bajarlo.
+            En pantallas medianas o superiores se centra verticalmente */}
+        <div className="absolute inset-0 flex flex-col items-center justify-start md:justify-center z-20 pt-36 md:pt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -36,10 +40,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-8"
             >
-              {/* H1 con SOLO el subtítulo */}
+              {/* H1 con el subtítulo */}
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight">
-                {/* Antes: {t('hero.title')} */}
-                {/* <br /> */}
                 <span className="text-white">{t('hero.subtitle')}</span>
               </h1>
 

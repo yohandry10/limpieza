@@ -6,17 +6,19 @@ const Footer = () => {
     <footer className="bg-black/90 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo ovalado más grande con borde dorado */}
-          <div className="flex items-center">
-            <div className="rounded-full overflow-hidden border-2 border-[#C8A35B] w-44 h-28">
+          {/* Logo modificado para mostrarse completo y sin forma ovalada */}
+          <div className="flex flex-col items-center">
+            <div className="overflow-hidden border-2 border-[#C8A35B] w-64">
               <img
                 src="/entretien.png"
                 alt="Logo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
-          </div>
+            {/* Si el logo incluye un lema que debe ser legible, se puede colocar aquí */}
           
+          </div>
+
           <div>
             <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">
               Servicios
@@ -56,7 +58,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">
               Enlaces Rápidos
@@ -96,7 +98,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">
               Síguenos
@@ -150,7 +152,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-400">&copy; 2025. Todos los derechos reservados.</p>
         </div>
