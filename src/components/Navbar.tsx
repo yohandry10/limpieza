@@ -5,13 +5,11 @@ import { useI18n } from '../i18n/i18nContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // Nuevo estado para determinar si estamos completamente en el top
   const [isAtTop, setIsAtTop] = useState(true);
   const { t, langue, changerLangue, getNextLangue } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
-      // Se actualiza a true solo si estamos en el top (offset 0)
       setIsAtTop(window.pageYOffset === 0);
     };
     window.addEventListener('scroll', handleScroll);
@@ -28,9 +26,9 @@ const Navbar = () => {
   const getNextLanguageFlag = () => {
     switch (langue) {
       case 'fr':
-        return '/reino-unido.png'; // drapeau anglais
+        return '/reino-unido.png';
       case 'en':
-        return '/francia.png'; // drapeau français
+        return '/francia.png';
       default:
         return '/reino-unido.png';
     }
@@ -60,14 +58,15 @@ const Navbar = () => {
       className="fixed w-full z-50 bg-transparent transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-0 sm:px-2 lg:px-4 relative">
-        <div className="flex items-center justify-between h-20">
-          {/* Botón hamburguesa para móvil: se posiciona desde la derecha para no superponerse al logo */}
+        <div className="flex items-center justify-between py-6">
+          {/* Botón hamburguesa para móvil */}
           <div className="md:hidden absolute right-8 inset-y-0 flex items-center">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
-          {/* Logo: solo se muestra si estamos en el top */}
+
+          {/* Logo - En escritorio queda igual, en móvil subido aún más */}
           {isAtTop && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -75,14 +74,21 @@ const Navbar = () => {
               className="flex-shrink-0 mx-auto md:ml-[-90px] lg:ml-[-150px]"
               style={{ width: 'auto', height: 'auto', overflow: 'visible' }}
             >
+              {/* Logo en escritorio */}
               <img
-                src="/entretien.png"
+                src="/defi.png"
                 alt="Logo"
-                className="h-48 w-64 object-contain"
-                style={{ maxWidth: 'none', margin: 0 }}
+                className="h-48 w-64 object-contain hidden md:block"
+              />
+              {/* Logo en móvil (subido más: -mt-4) */}
+              <img
+                src="/defi.png"
+                alt="Logo"
+                className="h-36 w-48 object-contain mx-auto -mt-4 md:hidden"
               />
             </motion.div>
           )}
+
           {/* Menú de escritorio */}
           <div className="hidden md:flex absolute right-0 items-center space-x-8">
             {navItems.map((item) => (
@@ -97,7 +103,7 @@ const Navbar = () => {
             ))}
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="relative inline-flex items-center space-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
+              className="relative inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
             >
               <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
                 <PhoneCall size={18} />
@@ -116,7 +122,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* Menú móvil tipo “side-drawer” */}
+
+      {/* Menú móvil */}
       {isMenuOpen && (
         <>
           <motion.div
