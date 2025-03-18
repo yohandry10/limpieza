@@ -1,6 +1,6 @@
 import React from 'react';
 import { useI18n } from '../i18n/i18nContext';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useI18n();
@@ -43,7 +43,9 @@ const Footer = () => {
           </div>
           {/* Sección de Enlaces Rápidos */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">{t('footer.quickLinks.title')}</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">
+              {t('footer.quickLinks.title')}
+            </h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-300 hover:text-[#C8A35B] transition-colors">
@@ -69,7 +71,9 @@ const Footer = () => {
           </div>
           {/* Sección de Redes Sociales */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">{t('footer.followUs')}</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#C8A35B]">
+              {t('footer.followUs')}
+            </h4>
             <div className="flex space-x-4">
               {/* Facebook */}
               <a
@@ -79,7 +83,12 @@ const Footer = () => {
                 className="relative inline-flex items-center justify-center w-14 h-14 rounded-full overflow-hidden group"
               >
                 <span className="absolute inset-0 bg-black z-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                <Facebook strokeWidth={1.5} stroke="#C8A35B" fill="none" className="relative z-10 w-8 h-8 transition-colors duration-300" />
+                <Facebook
+                  strokeWidth={1.5}
+                  stroke="#C8A35B"
+                  fill="none"
+                  className="relative z-10 w-8 h-8 transition-colors duration-300"
+                />
               </a>
               {/* Instagram */}
               <a
@@ -89,15 +98,12 @@ const Footer = () => {
                 className="relative inline-flex items-center justify-center w-14 h-14 rounded-full overflow-hidden group"
               >
                 <span className="absolute inset-0 bg-black z-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                <Instagram strokeWidth={1.5} stroke="#C8A35B" fill="none" className="relative z-10 w-8 h-8 transition-colors duration-300" />
-              </a>
-              {/* Twitter */}
-              <a
-                href="#"
-                className="relative inline-flex items-center justify-center w-14 h-14 rounded-full overflow-hidden group"
-              >
-                <span className="absolute inset-0 bg-black z-0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                <Twitter strokeWidth={1.5} stroke="#C8A35B" fill="none" className="relative z-10 w-8 h-8 transition-colors duration-300" />
+                <Instagram
+                  strokeWidth={1.5}
+                  stroke="#C8A35B"
+                  fill="none"
+                  className="relative z-10 w-8 h-8 transition-colors duration-300"
+                />
               </a>
             </div>
           </div>

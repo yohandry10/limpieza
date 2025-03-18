@@ -66,7 +66,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Logo - En escritorio queda igual, en móvil subido aún más */}
+          {/* Logo */}
           {isAtTop && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -80,7 +80,7 @@ const Navbar = () => {
                 alt="Logo"
                 className="h-48 w-64 object-contain hidden md:block"
               />
-              {/* Logo en móvil (subido más: -mt-4) */}
+              {/* Logo en móvil */}
               <img
                 src="/defi.png"
                 alt="Logo"
@@ -101,16 +101,19 @@ const Navbar = () => {
                 {item.nom}
               </motion.a>
             ))}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              className="relative inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
-            >
-              <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
-                <PhoneCall size={18} />
-                <span className="ml-1">{t('navbar.callNow')}</span>
-              </span>
-              <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-            </motion.button>
+            {/* Botón de llamada: al hacer clic llama al número */}
+            <a href="tel:4388709696">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                className="relative inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-[#C8A35B] bg-black text-[#C8A35B] overflow-hidden group transition-colors duration-300"
+              >
+                <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
+                  <PhoneCall size={18} />
+                  <span className="ml-1">{t('navbar.callNow')}</span>
+                </span>
+                <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+              </motion.button>
+            </a>
             <motion.button
               whileHover={{ scale: 1.05 }}
               onClick={handleLanguageChange}
@@ -156,15 +159,18 @@ const Navbar = () => {
                   {item.nom}
                 </a>
               ))}
-              <button
-                className="relative w-full inline-flex items-center justify-center gap-2 border border-[#C8A35B] bg-black text-[#C8A35B] px-4 py-2 rounded-full overflow-hidden group transition-colors duration-300 mt-4"
-              >
-                <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
-                  <PhoneCall size={18} />
-                  <span className="ml-1">{t('navbar.callNow')}</span>
-                </span>
-                <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-              </button>
+              {/* Botón de llamada en menú móvil */}
+              <a href="tel:4388709696">
+                <button
+                  className="relative w-full inline-flex items-center justify-center gap-2 border border-[#C8A35B] bg-black text-[#C8A35B] px-4 py-2 rounded-full overflow-hidden group transition-colors duration-300 mt-4"
+                >
+                  <span className="relative z-10 flex items-center group-hover:text-black transition-colors duration-300">
+                    <PhoneCall size={18} />
+                    <span className="ml-1">{t('navbar.callNow')}</span>
+                  </span>
+                  <span className="absolute inset-0 bg-[#C8A35B] transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                </button>
+              </a>
               <button
                 onClick={() => {
                   handleLanguageChange();

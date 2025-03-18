@@ -10,8 +10,6 @@ import WorkPlan from './components/WorkPlan';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-
-// 1) Importamos Toaster de react-hot-toast para los toasts globales
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -22,7 +20,6 @@ function App() {
     restDelta: 0.001
   });
 
-  // Suaviza el scroll y lo revierte al desmontar
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
     return () => {
@@ -33,15 +30,20 @@ function App() {
   return (
     <I18nProvider>
       <ParallaxProvider>
-        {/* 2) Colocamos el Toaster para que muestre notificaciones en toda la app */}
         <Toaster position="top-right" reverseOrder={false} />
-
-        {/* Barra de progreso animada en el tope */}
+        {/* Botón fijo inferior derecho: al hacer clic abre WhatsApp para enviar mensaje */}
+        <a
+          href="https://wa.me/4388709696"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed right-4 bottom-4 z-50"
+        >
+          <img src="/whatsapp.png" alt="WhatsApp" className="w-16 h-16" />
+        </a>
         <motion.div
           className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 transform origin-left z-50"
           style={{ scaleX }}
         />
-
         <div className="min-h-screen snap-y snap-mandatory">
           <Navbar />
           <div className="snap-start">
