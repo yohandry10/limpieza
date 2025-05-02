@@ -32,6 +32,7 @@ function App() {
       <ParallaxProvider>
         <Toaster position="top-right" reverseOrder={false} />
         {/* Botón fijo inferior derecho: al hacer clic abre WhatsApp para enviar mensaje */}
+        {/* 
         <a
           href="https://wa.me/4388709696"
           target="_blank"
@@ -39,7 +40,8 @@ function App() {
           className="fixed right-4 bottom-4 z-50"
         >
           <img src="/whatsapp.png" alt="WhatsApp" className="w-16 h-16" />
-        </a>
+        </a> 
+        */}
         <motion.div
           className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 transform origin-left z-50"
           style={{ scaleX }}
